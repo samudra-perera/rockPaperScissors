@@ -23,6 +23,7 @@ let player = {
         document.querySelector('.startGame').style.display = 'none';
         document.querySelector('.resetGame').style.display = 'flex';
         document.querySelector('.scores').style.visibility = 'visible';
+        document.querySelector('.winStatus').style.visibility = 'visible';
     },
 
     // Reset the game to the original states prior to game start
@@ -34,6 +35,7 @@ let player = {
         document.querySelector('.startGame').style.display = 'flex';
         document.querySelector('.resetGame').style.display = 'none';
         document.querySelector('.scores').style.visibility = 'hidden';
+        document.querySelector('.winStatus').style.visibility = 'hidden';
     },
     
     //Takes in the value of the input from the DOM and pushes into the playerChoiceArray property
@@ -67,6 +69,23 @@ scissors.addEventListener('click', function() {
     computer.computerChoice()
 })
 
+
+/*
 function compareWin() {
-    
+    let len = player.playerChoiceArray.length
+    for(let i = 0; i <= len; i++) {
+        if(player.playerChoiceArray[i] == computer.computerChoiceArray[i]) {
+        
+        }
+    }
 }
+*/
+
+/* 
+Things to accomplish
+
+
+1. Add buttons for the player to select the amount of games to reach the win condition 
+2. Hide the button choice until the player starts the game
+3. Compare the win condions and add to the score, then update the DOM
+*/

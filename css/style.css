@@ -6,7 +6,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 70vh;
 }
 
 .choice {
@@ -71,5 +71,9 @@ input.resetGame {
     cursor: pointer;
 }
 
-
+h3.winStatus {
+    text-align: center;
+    margin-top: 1.5em;
+    visibility: hidden;
+}
 /* Add hover states for the player selection where the hovered image 'pops out' of the page */
