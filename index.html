@@ -13,8 +13,8 @@
 <body>
     <h1>Rock Paper Scissors Go!</h1>
     <div class="scores">
-        <h3>Player Score: </h3>
-        <h3>Computer Score: </h3>
+        <h3 class="pScore">Player Score: </h3>
+        <h3 class="cScore">Computer Score: </h3>
     </div>
     <div class="selections">
         <div class="choice">
@@ -29,6 +29,10 @@
             <input class="scissors" src="assets/scissors.png" type="image" value="scissors">
             <h2>Scissors</h2>
         </div>
+    </div>
+    <div class="gameStates">
+        <input class="state startGame" type="button" value="Start">
+        <input class="state resetGame" type="button" value="Reset">
     </div>
 </body>
 <script src="js/main.js"></script>
