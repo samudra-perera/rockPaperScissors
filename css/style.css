@@ -39,6 +39,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
 }
 
 h3 {
@@ -69,3 +70,6 @@ input.resetGame {
     color: #ffea00;
     cursor: pointer;
 }
+
+
+/* Add hover states for the player selection where the hovered image 'pops out' of the page */
