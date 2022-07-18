@@ -37,13 +37,7 @@ let player = {
 
     // Reset the game to the original states prior to game start
     resetGame: function() {
-        computer.score = 0;
-        this.score = 0;
-        document.querySelector('.startGame').style.display = 'flex';
-        document.querySelector('.resetGame').style.display = 'none';
-        scores.style.visibility = 'hidden';
-        winStatus.innerText = '';
-        winStatus.style.visibility = 'hidden';
+        location.reload()
     },
     
     //Takes in the value of the input from the DOM and returns that value
@@ -78,18 +72,21 @@ rock.addEventListener('click', function() {
     let p = player.playerArray(rock)
     let c = computer.computerChoice()
     compareWin(c,p)
+    checkWin()
 })
 
 paper.addEventListener('click', function() {
     let p = player.playerArray(paper)
     let c = computer.computerChoice()
     compareWin(c,p)
+    checkWin()
 })
 
 scissors.addEventListener('click', function() {
     let p = player.playerArray(scissors)
     let c = computer.computerChoice()
     compareWin(c,p)
+    checkWin()
 })
 
 
@@ -117,7 +114,17 @@ function compareWin(c,p) {
 
 // Function to check the win state of the overall game
 function checkWin(check){
-    let goalScore = player.winningScore;
+    if(player.score == player.winningScore) {
+        document.querySelector('h1').innerText = 'Player Won the game. Press restart to play again'
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+    } else if (computer.score == player.winningScore) {
+        document.querySelector('h1').innerText = 'Computer Won the game. Press restart to play again'
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+    }
 }
 
 
@@ -144,11 +151,12 @@ inputScore.addEventListener('keypress', function(e) {
 Things to accomplish
 
 
-1. Add buttons for the player to select the amount of games to reach the win condition 
-2. Hide the button choices until the player starts the game
+1. Add buttons for the player to select the amount of games to reach the win condition // COMPLETED
+2. Hide the button choices until the player starts the game // COMPLETED
 3. Compare the win condions and add to the score, then update the DOM // COMPLETED 
 4. Add a simulation feature and print the results to the console
-5. Improve the code legibility using const variables
+5. Improve the code legibility using const variables // COMPLETED
 6. Fix the score status from moving elements downwards
 7. Add media queries - Last thing to do 
+8. Fix the styling
 */
