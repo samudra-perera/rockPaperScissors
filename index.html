@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
         <h3 class="cScore">Computer Score: </h3>
     </div>
     <h3 class="winStatus"></h3>
-    <div class="selections">
+    <div class="selections toggle">
         <div class="choice">
             <input class ="rock" src="assets/rock.png" type="image" value="rock">
             <h2>Rock</h2>
@@ -31,9 +31,15 @@
             <h2>Scissors</h2>
         </div>
     </div>
+    <div class="winningScore">
+        <input class="wS scoreButton" type="button" value="3">
+        <input class="wS scoreButton" type="button" value="5">
+        <input class="wS scoreButton" type="button" value="7">
+        <input class="wS inputScore"  type="text" placeholder="Enter winning score...">
+    </div>
     <div class="gameStates">
         <input class="state startGame" type="button" value="Start">
-        <input class="state resetGame" type="button" value="Reset">
+        <input class="state resetGame" type="button" value="Restart">
     </div>
     <script src="js/main.js" defer></script>
 </body>
