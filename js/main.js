@@ -147,6 +147,12 @@ inputScore.addEventListener('keypress', function(e) {
     }
 })
 
+
+
+
+
+
+
 /* 
 Things to accomplish
 
