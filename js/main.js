@@ -8,6 +8,10 @@ const pScore = document.querySelector('.pScore');
 const winStatus = document.querySelector('.winStatus');
 const scores = document.querySelector('.scores');
 const selections = document.querySelector('.selections');
+const wS3 = document.querySelector('.three')
+const wS5 = document.querySelector('.five')
+const wS7 = document.querySelector('.seven')
+const inputScore = document.querySelector('.inputScore')
 
 
 let computer = {
@@ -20,16 +24,15 @@ let computer = {
 
 let player = {
     score: 0,
-    
+    winningScore: 0,
+
     //Game Start State
     startGame: function() {
         pScore.innerText = `Player Score: ${this.score}`;
         cScore.innerText = `Computer Score: ${computer.score}`;
+        document.querySelector('h1').innerText = 'Select the number of games to win'
         document.querySelector('.startGame').style.display = 'none';
-        document.querySelector('.resetGame').style.display = 'flex';
-        selections.style.display = 'flex';
-        scores.style.visibility = 'visible';
-        winStatus.style.visibility = 'visible';
+        document.querySelector('.winningScore').style.display = 'flex';
     },
 
     // Reset the game to the original states prior to game start
@@ -46,7 +49,18 @@ let player = {
     //Takes in the value of the input from the DOM and returns that value
     playerArray: function(choice) {
         return choice.value
-    }
+    }, 
+
+    //
+    scoreFetch: function(choice) {
+        selections.style.display = 'flex';
+        scores.style.visibility = 'visible';
+        winStatus.style.visibility = 'visible';
+        document.querySelector('.winningScore').style.display = 'none'
+        resetGame.style.display = 'flex';
+        document.querySelector('h1').innerText = 'Rock, Paper, Scissors Go!'
+        return Number(choice.value)
+    },
     
 }
 
@@ -79,8 +93,6 @@ scissors.addEventListener('click', function() {
 })
 
 
-
-
 // Function that takes in the two parameters (the player choice from the DOM element and the computer random choice) and updating score 
 function compareWin(c,p) {
     if(c == p) {
@@ -103,6 +115,31 @@ function compareWin(c,p) {
 }
 
 
+// Function to check the win state of the overall game
+function checkWin(check){
+    let goalScore = player.winningScore;
+}
+
+
+// Getting the user input on the final winning score
+wS3.addEventListener('click', function() {
+    player.winningScore = player.scoreFetch(wS3)
+})
+
+wS5.addEventListener('click', function() {
+    player.winningScore = player.scoreFetch(wS5)
+})
+
+wS7.addEventListener('click', function() {
+    player.winningScore = player.scoreFetch(wS7)
+})
+
+inputScore.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        player.winningScore = player.scoreFetch(inputScore)
+    }
+})
+
 /* 
 Things to accomplish
 
@@ -113,5 +150,5 @@ Things to accomplish
 4. Add a simulation feature and print the results to the console
 5. Improve the code legibility using const variables
 6. Fix the score status from moving elements downwards
-7. Add media queries 
+7. Add media queries - Last thing to do 
 */
