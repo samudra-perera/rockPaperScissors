@@ -13,7 +13,7 @@ const wS5 = document.querySelector('.five')
 const wS7 = document.querySelector('.seven')
 const inputScore = document.querySelector('.inputScore')
 
-
+//Computer Object
 let computer = {
     score: 0,
     choices: ['rock', 'paper', 'scissors'],
@@ -22,6 +22,7 @@ let computer = {
     }
 }
 
+//Player Object
 let player = {
     score: 0,
     winningScore: 0,
@@ -58,16 +59,17 @@ let player = {
     
 }
 
-
+//Starting The Rock Paper Scissors Game
 startGame.addEventListener('click', function () {
     player.startGame()
 })
 
+//Reseting the game aka refreshing the page to the initial state
 resetGame.addEventListener('click', function() {
     player.resetGame()
 })
 
-//selecting the player choices and checking the win
+//taking the player choices and checking if the player won using the compareWin func then checking if the player won the best of series
 rock.addEventListener('click', function() {
     let p = player.playerArray(rock)
     let c = computer.computerChoice()
@@ -112,7 +114,7 @@ function compareWin(c,p) {
 }
 
 
-// Function to check the win state of the overall game
+// Function to check the win state of the overall game 
 function checkWin(check){
     if(player.score == player.winningScore) {
         document.querySelector('h1').innerText = 'Player Won the game. Press restart to play again'
@@ -128,7 +130,7 @@ function checkWin(check){
 }
 
 
-// Getting the user input on the final winning score
+// Getting the user input on the final winning score (best of series)
 wS3.addEventListener('click', function() {
     player.winningScore = player.scoreFetch(wS3)
 })
