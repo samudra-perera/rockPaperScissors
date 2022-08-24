@@ -17,6 +17,15 @@ body {
     justify-content: center;
     align-items: center;
     margin: 2em;
+    box-shadow: 0px 2px 8px #000;
+}
+
+.choice:hover {
+    box-shadow: 0px 6px 25px #000;
+}
+
+.choice input {
+    padding-top: 2em;
 }
 
 input[type="image"] {
@@ -77,7 +86,6 @@ h3.winStatus {
     margin-top: 1.5em;
     visibility: hidden;
 }
-/* Add hover states for the player selection where the hovered image 'pops out' of the page */
 
 input.scoreButton {
     background-color: inherit;
@@ -114,4 +122,62 @@ input.wS.inputScore {
 input.wS {
     padding: 1em;
     margin: 0em 1em;
+}
+
+/**** MEDIA QUERIES ***/
+
+@media only screen and (max-width: 1000px) {
+    input[type="image"] {
+        height: 150px;
+        width: 150px;
+    }
+
+    .selections {
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    input[type="image"] {
+        height: 100px;
+        width: 100px;
+    }
+
+    h2 {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1em;
+    }
+
+    .selections {
+        height: 40vh;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    input[type="image"] {
+        height: 70px;
+        width: 70px;
+    }
+
+    h2 {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1em;
+    }
+
+    .selections {
+        height: 30vh;
+    }
+
+    .choice {
+        margin: 1em;
+    }
+
+    input.wS {
+        margin: 0em .3em;
+        padding: .5em;
+    }
+
+    input.WS.inputScore {
+        font-size: 100%;
+    }
 }
