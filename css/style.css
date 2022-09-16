@@ -153,7 +153,7 @@ input.wS {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 425px) {
     input[type="image"] {
         height: 70px;
         width: 70px;

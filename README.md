@@ -1,5 +1,5 @@
 # Rock Paper Scissors
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+This was my first foray into the world of software development and I chose to make a simple rock paper scissors game. In this application the player can select a preset number of games to play up till or enter their own value.
 
 **Link to project:** http://recruiters-love-seeing-live-demos.com/
 
@@ -7,26 +7,57 @@ Write a short sentence or two about this project and what it does. Be sure to in
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** HTML, CSS, and Vanilla JavaScript
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+**Client**
 
-## Optimizations
-*(optional)*
+This is a fairly simple application. With all the functionality being controlled by Javascript. On-load, the game start and game win condition appear and disappear from Javascript toggling the display property of the elements to none. The selected win condition is stored in the player object property and compared with the current score to determine the winner. The player selection is taken via a helper method from the player object. When a player selection is made the the computer selection method is called along with the compare win function(comparing who won the match), and the check win function (checking if the player of computer has acheived the selected score). If the check win condition is true, the game is over and the restart button will reload the page.
 
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+## Further Optimizations
+
+Unfortunately, looking back at this project I did not follow DRY principles. Outlined below are the following things I would do differently if I were to rewrite this application again. 
+
+1. Better function and variable names that are easier to understand.
+2. Using the QuerySelectorAll function to create an array from the win state buttons and player selection buttons (~removes 10 lines of code) --> See Below
+
+```JavaScript
+const wS3 = document.querySelector('.three')
+const wS5 = document.querySelector('.five')
+const wS7 = document.querySelector('.seven')
+```
+to
+
+```JavaScript
+const wS = document.querySelectorAll('.wS')
+```
+
+3. From the array above I could addEventListeners to those arrays nodes and run my comparison functions (removes ~12 lines of code)
+
+```JavaScript
+wS.forEach(button => {
+    button.AddEventListener('click', () => {
+        player.winningScore = player.scoreFetch(wS)
+    })
+})
+```
+
+4. I would change the media queries from strict 'only' to a staggered more progressive screen size offering
+
+## Future Consideration
+
+In the future, I would like to add a simulation mode that would simulate X amount of games and return the results of each game as an object.
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *fuck yeah I did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+This being my first real solo project, I learned a lot. I learned about manipulating the DOM, flex-box, styling CSS via the chrome dev tools, writing good comments, media queries and, the principles of responsive web design.
 
-## Examples:
+## Recent Projects:
 Take a look at these couple examples that I have in my own portfolio:
 
-**Palettable:** https://github.com/alecortega/palettable
+**Just Journal:** https://github.com/alecortega/palettable
 
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
+**The Recipe Book** https://github.com/alecortega/twitter-battle
 
-**Patch Panel:** https://github.com/alecortega/patch-panel
+**Portfolio Site** https://github.com/alecortega/patch-panel
 
 
