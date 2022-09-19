@@ -1,7 +1,7 @@
 # Rock Paper Scissors
 This was my first foray into the world of software development and I chose to make a simple rock paper scissors game. In this application the player can select a preset number of games to play up till or enter their own value.
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+**Link to project:** https://darling-macaron-fb687d.netlify.app/
 
 ![alt tag](http://placecorgi.com/1200/650)
 
